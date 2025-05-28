@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/130fd66d00.css" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="site.css">
+    <title>Projects - BackOffice Alpha Portal</title>
+</head>
+<body>
+    <div class="backoffice-wrapper">
+        <aside id="sidebar">
+            <section class="logotype">
+                <a href="">
+                    <img src="images/logotype/alphaLogotype.svg" alt="alpha">
+                    <span>alpha</span>
+                </a>
+            </section>
+
+            <section class="nav-links">
+                <a href="projects.html" class="nav-link active">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Projects</span>
+                    
+                </a>
+                <a href="" class="nav-link">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Clients</span>
+                    
+                </a>
+                <a href="" class="nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Members</span>
+                    
+                </a>
+
+            </section>
+
+
+        </aside>
+
+        <main>
+
+            <header id="header">
+                <form class="search-form" method="get" asp-controller="" asp-action="" novalidate>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" class="form-search-input" placeholder="Search anything..."/>
+                </form>
+                <div class="notification-container" id="notification-container">
+                    <button type="button" data-type="dropdown" data-target="#notification-dropdown" class="btn-notification">
+                        <i class="dot dot-red fa-solid fa-circle"></i>
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    <div id="notification-dropdown" class="dropdown">
+                        <div class="dropdown-header">
+                            <h4>Notifications</h4>
+                            <div class="badge badge-red">0</div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="notifications">
+                            <div class="notification" data-notification-type="user">
+                                <div class="user-image">
+                                    <img src="images/icons/avatar.svg" alt="avatar">
+                                </div>
+                                <span class="message">Luka Ramoz-Garcia signed in</span>
+                                <span class="time">10 min ago</span>
+                                <button class="btn-remove"></button>
+                            </div>
+
+                            <div class="notification" data-notification-type="user">
+                                <div class="user-image">
+                                    <img src="images/icons/avatar.svg" alt="avatar">
+                                </div>
+                                <span class="message">Luka Ramoz-Garcia signed in</span>
+                                <span class="time">10 min ago</span>
+                                <button class="btn-remove"></button>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+                <div class="account-container" id="account-container">
+                    <button type="button" data-type="dropdown" data-target="#account-dropdown" class="btn-account">
+                        <img src="images/icons/avatar.svg" alt="avatar">
+                    </button>
+
+                    <div id="account-dropdown" class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="account-name">
+                                <img src="images/icons/avatar.svg" alt="avatar">
+                                <span>Luka Ramoz-Garcia</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-body">
+                            <nav class="dropdown-options">
+                                <div class="dropdown-option">
+                                    <label for="darkModeToggle" class="switch-label">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <span>Dark Mode</span>
+                                    </label>   
+                                    <label class="switch">
+                                        <input type="checkbox" id="darkModeToggle" data-type="toggle" data-func="darkmode">
+                                        <span class="slider"></span>
+                                    </label>                                
+                                </div>
+                            </nav>
+                            <div class="divider"></div>
+                            <nav class="dropdown-actions">
+                                <a class="dropdown-action" href="#">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </header>
+            <div id="projects" class="page">
+                <div class="page-header">
+                    <h1>Projects</h1>
+                    <button type="button" class="btn" data-type="modal" data-target="#add-project-modal">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Project</span>
+                    </button>
+                </div>
+
+                <section class="project-list">
+                    <div class="project card">
+                        <div class="card-header">
+                            <div class="project-image">
+                                    <img src="images/projects/project-template-purple.svg" alt="project">
+                                </div>
+                                <h6 class="project-name">Website Redesign</h6>
+                                <span class="client-name">GitLab Inc.</span>
+                                <div class="project-actions-container" id="project-container">
+                    <button type="button" data-type="dropdown" data-target="#project-dropdown" class="btn-action">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                    <div id="project-dropdown" class="dropdown">
+                        <div class="dropdown-body">
+                            <nav class="dropdown-actions">
+                                <a class="dropdown-action" href="#">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span>Edit</span>
+                                </a>
+                                <a class="dropdown-action" href="#">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>Add Member</span>
+                                </a>
+                            </nav>
+                            <div class="divider"></div>
+                            <nav class="dropdown-actions">
+                                <a class="dropdown-action remove" href="#">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete Project</span>
+                                </a>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                </div>
+                        </div>
+                        <div class="card-body">
+                            <p>It is necessary to develop a website redesign in a corporate style.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="badge badge-normal">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>1 week left</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project card">
+                        <div class="card-header">
+                            <div class="project-image">
+                                    <img src="images/projects/project-template-purple.svg" alt="project">
+                                </div>
+                                <h6 class="project-name">Website Redesign</h6>
+                                <span class="client-name">GitLab Inc.</span>
+                                <div class="project-actions-container" id="project-container">
+                    <button type="button" data-type="dropdown" data-target="#project-dropdown" class="btn-action">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                    <div id="project-dropdown" class="dropdown">
+                        <div class="dropdown-body">
+                            <nav class="dropdown-actions">
+                                <a class="dropdown-action" href="#">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span>Edit</span>
+                                </a>
+                                <a class="dropdown-action" href="#">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>Add Member</span>
+                                </a>
+                            </nav>
+                            <div class="divider"></div>
+                            <nav class="dropdown-actions">
+                                <a class="dropdown-action remove" href="#">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete Project</span>
+                                </a>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                </div>
+                        </div>
+                        <div class="card-body">
+                            <p>It is necessary to develop a website redesign in a corporate style.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="badge badge-danger">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>3 days left</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+    <section id="add-project-modal" class="modal">
+        <div class="card">
+            <div class="card-header">
+                <h3>Add Project</h3>
+                <button data-type="close" data-target="#add-project-modal" class="btn-close"></button>
+            </div>
+            <div class="card-body">
+
+                <form asp-controller="" asp-action="" method="post" enctype="multipart/form-data" novalidate>
+                    <div class="form-group">
+                        <div id="upload-trigger" class="image-preview-container project-image">
+                            <img id="image-preview" src="#" class="hide">
+                            <div id="image-preview-icon-container" class="circle circle-gray">
+                                <i id="image-preview-icon" class="fa-solid fa-camera"></i>
+                            </div>
+                        </div>
+                        <input type="file" id="image-upload" accept="image/*">
+                        
+
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Project Name</label>
+                        <input class="form-input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Name</label>
+                        <div class="form-select" data-placeeholder="Choose a Client">
+                            <button type="button" class="form-select-trigger">
+                                <span class="form-select-text"></span>
+                            </button>
+                            <ul class="form-select-options">
+                                <li class="form-select-option" data-value="1">Client 1</li>
+                                <li class="form-select-option" data-value="2">Client 2</li>
+                            </ul>
+                            <input type="hidden" name="client-select-value">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea id="add-project-description" class="form-input"></textarea>
+                        <div id="add-project-description-wysiwyg-editor" class="wysiwyg-editor"></div>
+                        <div id="add-project-description-wysiwyg-toolbar" class="wysiwyg-toolbar"></div>
+                    </div>
+
+                    <div class="form-horizontal-group">
+                        <div class="form-group">
+                            <label class="form-label">Start Date</label>
+                            <input class="form-input" type="date">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">End Date</label>
+                            <input class="form-input" type="date">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Member</label>
+                        <div class="form-select" data-placeeholder="Choose a Member">
+                            <button type="button" class="form-select-trigger">
+                                <span class="form-select-text"></span>
+                            </button>
+                            <ul class="form-select-options">
+                                <li class="form-select-option" data-value="1">Member 1</li>
+                                <li class="form-select-option" data-value="2">Member 2</li>
+                            </ul>
+                            <input type="hidden" name="member-select-value">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Budget</label>
+                        <div class="form-input-extended">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <input class="form-input" type="text">
+                        </div>
+                        
+                    </div>
+
+                    <button type="submit" class="btn">Create</button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    
+    <script src="https://kit.fontawesome.com/130fd66d00.js" crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+</html>
